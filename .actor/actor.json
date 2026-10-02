@@ -1,0 +1,30 @@
+{
+  "actorSpecification": 1,
+  "name": "email-verifier-mcp",
+  "title": "Email Verifier MCP — DNS Email Verification",
+  "description": "Remote MCP server for email verification. RFC 5321 syntax, MX lookup, 160k disposable-domain blacklist and role-account detection. DNS-only and compliant by default; SMTP handshake is opt-in. Zero third-party API fees.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "usesStandbyMode": true,
+  "webServerMcpPath": "/mcp",
+  "output": "./output_schema.json",
+  "inputSchema": {
+    "title": "Email Verifier MCP",
+    "description": "This Actor is a remote MCP server and takes no manual input. Connect your MCP client to the Actor's standby /mcp endpoint (see README) and call the tools from there. Tool calls are metered pay-per-event; initialize and tools/list are free.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "maxTotalChargeUsd": {
+        "type": "number",
+        "title": "Maximum total charge (USD)",
+        "description": "Hard cap on how much this run may charge. Recommended when letting an autonomous agent call the server. Example: 0.10 USD ≈ 20 tool calls.",
+        "minimum": 0,
+        "maximum": 1000,
+        "unit": "USD",
+        "editor": "hidden"
+      }
+    },
+    "required": []
+  },
+  "dockerfile": "../Dockerfile"
+}

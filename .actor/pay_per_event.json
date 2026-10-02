@@ -1,0 +1,15 @@
+{
+  "pricingModel": "PAY_PER_EVENT",
+  "pricingPerEvent": {
+    "actorChargeEvents": {
+      "tool-call": {
+        "eventTitle": "MCP tool call",
+        "eventDescription": "Any MCP tool call (check_email, verify_bulk, check_mx, is_disposable). DNS-only checks by default; SMTP handshake is opt-in. Zero upstream API cost.",
+        "eventPriceUsd": 0.005,
+        "isPrimaryEvent": true
+      }
+    }
+  },
+  "minimalMaxTotalChargeUsd": 0.05,
+  "_note": "Discovery requests (initialize, tools/list) are deliberately NOT registered as charge events, so agents can connect and enumerate tools for free. Set pricing via the Apify API (PUT /v2/acts/{id}); apify push does not write pricing."
+}

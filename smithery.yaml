@@ -1,0 +1,21 @@
+# Smithery deployment spec for email-verifier-mcp
+# Docs: https://smithery.ai/docs (server runs as a stdio subprocess)
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      smtpEnabled:
+        type: boolean
+        title: "Enable SMTP handshake"
+        description: "Opt-in SMTP verification. OFF by default for compliance — DNS-only (syntax + MX + disposable) is the compliant default. Turn on only from infrastructure you control."
+        default: false
+    required: []
+  commandFunction: |
+    (config) => ({
+      command: 'npx',
+      args: ['-y', 'email-verifier-mcp'],
+      env: {
+        SMTP_DEFAULT: config.smtpEnabled ? '1' : '0'
+      }
+    })

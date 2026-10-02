@@ -1,0 +1,55 @@
+{
+  "name": "email-verifier-mcp",
+  "version": "1.0.0",
+  "description": "DNS-based email verification MCP server — RFC 5321 syntax, MX record, disposable/role-account detection, optional SMTP handshake. Zero third-party API fees.",
+  "type": "module",
+  "bin": {
+    "email-verifier-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "start:http": "node dist/apify-http.js",
+    "start:hosted": "HOSTED_MODE=1 node dist/index.js",
+    "test": "vitest run",
+    "e2e": "node e2e-test.mjs",
+    "e2e:http": "node http-e2e-test.mjs",
+    "smithery:login": "smithery login",
+    "smithery:deploy": "smithery deploy",
+    "showcase": "node scripts/verify-showcase.mjs",
+    "apify:push": "npm run build && apify push"
+  },
+  "keywords": [
+    "mcp",
+    "email",
+    "verification",
+    "smtp",
+    "mx",
+    "dns",
+    "disposable",
+    "model-context-protocol"
+  ],
+  "license": "MIT",
+  "author": "PanStories",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "apify": "^3.7.2",
+    "disposable-email-domain": "^1.0.79",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  }
+}
