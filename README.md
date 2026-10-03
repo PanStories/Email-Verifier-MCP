@@ -390,3 +390,16 @@ npm run showcase     # 真實 DNS 展示 -> verify-showcase.html
 ## 授權
 
 MIT。一次性網域清單來自 [`disposable-email-domain`](https://www.npmjs.com/package/disposable-email-domain)（MIT，每週更新）。
+
+---
+
+## Support · 赞助 · 贊助
+
+**EN** — **Email Verifier MCP** is open source (MIT), ad-free. It is funded by the community, not by ads. If it powers your agents or workflow, please support it:
+- ☕ Ko-fi (the **Sponsor** ❤️ button on this repo routes here): https://ko-fi.com/panstories
+
+**简体中文** — **Email Verifier MCP** 开源（MIT）、无广告，由社区资助而非广告。若它支撑了你的智能体或工作流，欢迎赞助：点本仓库的 **Sponsor** 按钮（跳转 Ko-fi）或前往 https://ko-fi.com/panstories
+
+**繁體中文** — **Email Verifier MCP** 開源（MIT）、無廣告，由社群資助而非廣告。若它支撐了你的智能體或工作流，歡迎贊助：點本倉庫的 **Sponsor** 按鈕（導向 Ko-fi）或前往 https://ko-fi.com/panstories
+
+Thank you! · 谢谢 · 謝謝 💙
