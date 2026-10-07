@@ -1,0 +1,54 @@
+{
+  "slug": "email-verifier-mcp",
+  "actorId": "LhK9VskPkgkSWCPDy",
+  "version": "1.0.0",
+  "endpoint": "https://neeenja--email-verifier-mcp.apify.actor/mcp",
+  "apifyStore": "https://apify.com/neeenja/email-verifier-mcp",
+  "github": "https://github.com/PanStories/Email-Verifier-MCP",
+  "sartbot": "https://sartbot.com/mcp/email-verifier-mcp/",
+  "isPublic": true,
+  "standby": {
+    "isEnabled": true,
+    "tenancy": "SINGLE_TENANT",
+    "idleTimeoutSecs": 120,
+    "memoryMbytes": 512,
+    "maxRequestsPerActorRun": 4
+  },
+  "tools": [
+    { "name": "check_email", "billable": true, "event": "tool-call" },
+    { "name": "verify_bulk", "billable": true, "event": "tool-call" },
+    { "name": "check_mx", "billable": true, "event": "tool-call" },
+    { "name": "is_disposable", "billable": true, "event": "tool-call" }
+  ],
+  "resources": ["blacklist://stats"],
+  "prompts": ["verify_signup_email"],
+  "pricing": {
+    "initialize_tools_list": "free",
+    "any_tool_call": "$0.005 (Apify PPE, event: tool-call)",
+    "self_host_npx": "free and unlimited (MIT) — REQUIRES npm publish (currently BROKEN: package 404)"
+  },
+  "tagline": {
+    "en": "Verify email addresses at zero per-lookup cost — RFC 5321 syntax, MX, 182k disposable-domain blocklist, role-account detection, all from free DNS. SMTP handshake opt-in.",
+    "zh-CN": "零边际成本校验邮箱：RFC 5321 语法 + MX + 18.2 万一次性域名黑名单 + 角色账号识别，全部来自免费 DNS。SMTP 握手可选。",
+    "zh-TW": "零邊際成本驗證信箱：RFC 5321 語法 + MX + 18.2 萬一次性網域黑名單 + 角色帳號識別，全部來自免費 DNS。SMTP 握手可選。"
+  },
+  "install": {
+    "npx": "npx -y email-verifier-mcp",
+    "npx_published": false,
+    "apify_streamable_http": "https://neeenja--email-verifier-mcp.apify.actor/mcp"
+  },
+  "channel_status": {
+    "apify_store": "200 live, isPublic=true",
+    "sartbot_detail": "200 live, featured=true",
+    "endpoint_no_token": "401 (alive)",
+    "smithery": "308 redirect — NOT listed under this slug",
+    "glama": "301 redirect — public repo, may auto-index; not confirmed listed",
+    "npm": "404 — package never published"
+  },
+  "verified_facts": {
+    "blocklist_domains_actual": 182216,
+    "blocklist_source": "disposable-email-domain@1.0.83 (MIT, auto-refreshed daily)",
+    "readme_trilingual": true,
+    "readme_version_line": false
+  }
+}

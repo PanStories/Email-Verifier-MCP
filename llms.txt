@@ -1,0 +1,41 @@
+# Email Verifier MCP
+
+A Model Context Protocol (MCP) server that verifies email addresses using free DNS queries and an open-source disposable-domain blocklist. No third-party API, no API key, and no per-lookup fee for self-hosted use.
+
+## Endpoint (hosted, zero setup)
+- Streamable HTTP: https://neeenja--email-verifier-mcp.apify.actor/mcp
+- Auth: `Authorization: Bearer <YOUR_APIFY_TOKEN>` (tool calls billed $0.005 each, pay-per-event)
+
+## Self-host
+- Source: https://github.com/PanStories/Email-Verifier-MCP
+- Run: `git clone https://github.com/PanStories/Email-Verifier-MCP && cd Email-Verifier-MCP && npm i && npm start`
+- License: MIT (free and unlimited when self-hosted)
+
+## Tools
+- `check_email` — full check on one address: RFC 5321 syntax, MX, disposable, role account; optional SMTP handshake. Returns a human summary + structured JSON.
+- `verify_bulk` — same checks for up to 10 addresses at once, plus a summary line.
+- `check_mx` — standalone MX lookup sorted by priority.
+- `is_disposable` — is the address/domain a throwaway provider? Accepts `user@domain` or `domain`.
+
+## Resources
+- `blacklist://stats` — blocklist size and source (182,000+ disposable domains).
+
+## Prompts
+- `verify_signup_email` — accept / flag / reject decision template.
+
+## Checks & scoring (additive, fully explainable)
+- Syntax 20 · MX exists 30 · Not disposable 20 · Not role account 10 · SMTP reachable 10 · SMTP confirms mailbox 10.
+- `valid = true` only when syntax passes, an MX record exists, and the domain is not disposable.
+- `score` 80/100 means every DNS check passed; the last 20 points require the opt-in SMTP handshake.
+
+## Compliance
+- DNS-only by default — never opens an outbound SMTP connection, so it cannot be mistaken for port-25 scanning.
+- The SMTP handshake is opt-in (`smtp: true`) and should run only from infrastructure you control.
+
+## Pricing
+- `initialize` / `tools/list`: free (agents can always connect and discover).
+- Any tool call on the hosted endpoint: $0.005.
+- Self-hosted (MIT): free and unlimited.
+
+## Clients
+Works with Claude Desktop, Cursor, Windsurf, GitHub Copilot, and any MCP client.

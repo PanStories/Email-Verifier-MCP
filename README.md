@@ -10,10 +10,11 @@
 
 | It lives at | Link |
 |---|---|
-| MCP endpoint | `https://neeenja--email-verifier-mcp.apify.actor/mcp` |
+| Hosted MCP endpoint | `https://neeenja--email-verifier-mcp.apify.actor/mcp` — zero setup, works today |
 | Apify Store | https://apify.com/neeenja/email-verifier-mcp |
 | Source code | https://github.com/PanStories/Email-Verifier-MCP |
-| One-line install | `npx -y email-verifier-mcp` |
+| Self-host (clone) | `git clone https://github.com/PanStories/Email-Verifier-MCP && cd Email-Verifier-MCP && npm i && npm start` |
+| via `npx` | `npx -y email-verifier-mcp` — 🚧 npm publish in progress; use the hosted endpoint or clone above for now |
 | Featured on | [Sartbot Featured](https://sartbot.com/) |
 
 ---
@@ -25,7 +26,7 @@
 
 Every product with a signup form needs to know whether an email is real. The usual answer is a paid API — SendGrid, Hunter, ZeroBounce — billed per lookup. This server does the checks that actually catch bad signups using **free DNS queries and an open-source blocklist**, so the marginal cost is zero.
 
-It is built agent-native: one `npx` command and your agent can verify an address itself. No dashboard, no account, no API key.
+It is built agent-native: point your agent at the hosted endpoint or run it locally — no dashboard, no account, no API key for the DNS checks.
 
 | | |
 |---|---|
@@ -81,7 +82,7 @@ The score is additive and fully explainable — no black box.
 
 ## Connect
 
-**Option A — local, via `npx` (free, unlimited).** Runs as a stdio subprocess inside your own agent:
+**Option A — self-host via `npx` (free, unlimited).** Runs as a stdio subprocess inside your own agent:
 
 ```json
 {
@@ -93,6 +94,8 @@ The score is additive and fully explainable — no black box.
   }
 }
 ```
+
+> 🚧 The `npx` package is being published to npm. Until it lands, clone the repo (see the table above) or use the hosted endpoint (Option B).
 
 **Option B — hosted endpoint on Apify.** Use it from anywhere, including agents that cannot spawn subprocesses:
 
@@ -150,7 +153,7 @@ MIT. The disposable-domain list comes from [`disposable-email-domain`](https://w
 
 任何带注册环节的产品都要判断邮箱是不是真的。常见方案是付费 API —— SendGrid、Hunter、ZeroBounce 按次计费。本服务用**免费 DNS 查询 + 开源黑名单**完成真正有效的检查，边际成本为零。
 
-它面向 Agent 设计：一条 `npx` 命令，Agent 就能自己校验邮箱。不需要仪表盘、不需要账号、不需要 API key。
+它面向 Agent 设计：把 Agent 指向托管端点，或在本地自行运行 —— 不需要仪表盘、不需要账号、DNS 检查不需要 API key。
 
 | | |
 |---|---|
@@ -206,7 +209,7 @@ MIT. The disposable-domain list comes from [`disposable-email-domain`](https://w
 
 ## 连接方式
 
-**方式 A —— 本地 `npx`（免费、无限次）**。在你的 Agent 进程内以 stdio 子进程运行：
+**方式 A —— 本地 `npx` 自托管（免费、无限次）**。在你的 Agent 进程内以 stdio 子进程运行：
 
 ```json
 {
@@ -218,6 +221,8 @@ MIT. The disposable-domain list comes from [`disposable-email-domain`](https://w
   }
 }
 ```
+
+> 🚧 `npx` 包正在发布到 npm。在发布完成前，请克隆仓库（见上方表格）或使用托管端点（方式 B）。
 
 **方式 B —— Apify 托管端点**。任何地方都能调用，包括无法启动子进程的 Agent：
 
@@ -275,7 +280,7 @@ MIT。一次性域名列表来自 [`disposable-email-domain`](https://www.npmjs.
 
 任何帶註冊環節的產品都要判斷信箱是不是真的。常見做法是付費 API —— SendGrid、Hunter、ZeroBounce 按次計費。本服務用**免費 DNS 查詢 + 開源黑名單**完成真正有效的檢查，邊際成本為零。
 
-它為 Agent 而生：一條 `npx` 指令，Agent 就能自己驗證信箱。不需要儀表板、不需要帳號、不需要 API key。
+它為 Agent 而生：把 Agent 指向託管端點，或在本地自行執行 —— 不需要儀表板、不需要帳號、DNS 檢查不需要 API key。
 
 | | |
 |---|---|
@@ -331,7 +336,7 @@ MIT。一次性域名列表来自 [`disposable-email-domain`](https://www.npmjs.
 
 ## 連線方式
 
-**方式 A —— 本機 `npx`（免費、無限量）**。在你的 Agent 行程內以 stdio 子行程執行：
+**方式 A —— 本機 `npx` 自託管（免費、無限量）**。在你的 Agent 行程內以 stdio 子行程執行：
 
 ```json
 {
@@ -343,6 +348,8 @@ MIT。一次性域名列表来自 [`disposable-email-domain`](https://www.npmjs.
   }
 }
 ```
+
+> 🚧 `npx` 套件正在發佈到 npm。發佈完成前，請克隆倉庫（見上方表格）或使用託管端點（方式 B）。
 
 **方式 B —— Apify 託管端點**。任何地方都能呼叫，包含無法啟動子行程的 Agent：
 
