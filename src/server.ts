@@ -53,6 +53,9 @@ export function buildServer(): McpServer {
           .optional()
           .describe("Override checks. Default: syntax, mx, blacklist, role (DNS-only)."),
       },
+      // M8ven Trust Index: four explicit boolean hints per tool (OpenAI directory
+      // hard gate). check_email performs outbound DNS lookups -> openWorld: true.
+      annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
     },
     async ({ email, smtp, checks }) => {
       const result = await checkEmail(email, {
@@ -78,6 +81,7 @@ export function buildServer(): McpServer {
         emails: z.array(z.string()).min(1).max(10).describe("1–10 email addresses"),
         smtp: z.boolean().optional().default(SMTP_DEFAULT).describe("Opt-in SMTP handshake for all emails."),
       },
+      annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
     },
     async ({ emails, smtp }) => {
       const bulk = await verifyBulk(emails, { smtp });
@@ -99,6 +103,7 @@ export function buildServer(): McpServer {
       inputSchema: {
         domain: z.string().describe("Domain to query, e.g. example.com"),
       },
+      annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
     },
     async ({ domain }) => {
       const mx = await resolveMx(domain.toLowerCase());
@@ -126,6 +131,8 @@ export function buildServer(): McpServer {
       inputSchema: {
         input: z.string().describe("Email or bare domain, e.g. someone@mailinator.com or mailinator.com"),
       },
+      // Local blacklist/role lookup only — no outbound calls -> openWorld: false.
+      annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
     },
     async ({ input }) => {
       const disposable = isDisposable(input);
