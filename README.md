@@ -5,6 +5,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![MCP](https://img.shields.io/badge/MCP-Streamable%20HTTP-blue)
 ![Transport](https://img.shields.io/badge/Transport-stdio%20%2B%20HTTP-green)
+[![M8ven Trust Index](https://m8ven.ai/badge/mcp/panstories/email-verifier-mcp)](https://m8ven.ai/mcp/panstories/email-verifier-mcp)
 
 🌐 **[English](#english)** · **[简体中文](#简体中文)** · **[繁體中文](#繁體中文)**
 
@@ -14,13 +15,15 @@
 | Apify Store | https://apify.com/neeenja/email-verifier-mcp |
 | Source code | https://github.com/PanStories/Email-Verifier-MCP |
 | Self-host (clone) | `git clone https://github.com/PanStories/Email-Verifier-MCP && cd Email-Verifier-MCP && npm i && npm start` |
-| via `npx` | `npx -y email-verifier-mcp` — 🚧 npm publish in progress; use the hosted endpoint or clone above for now |
+| npm package | 🚧 publish in progress — not yet on npm; use the hosted endpoint or clone above for now |
 | Featured on | [Sartbot Featured](https://sartbot.com/) |
 
 ---
 
 <a id="english"></a>
 # English
+
+**Current version: 1.0.0**
 
 ## What you get
 
