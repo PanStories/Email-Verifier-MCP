@@ -147,6 +147,10 @@ npm run showcase     # real-DNS demo -> verify-showcase.html
 
 MIT. The disposable-domain list comes from [`disposable-email-domain`](https://www.npmjs.com/package/disposable-email-domain) (MIT, refreshed weekly).
 
+## Privacy
+
+Read-only and stateless. Submitted email addresses are processed in memory only and are **not stored**; the opt-in SMTP handshake discloses the checking host's IP to the recipient's mail server. See [`PRIVACY.md`](PRIVACY.md).
+
 ---
 
 <a id="简体中文"></a>
