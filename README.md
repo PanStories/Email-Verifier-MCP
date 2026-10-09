@@ -6,6 +6,7 @@
 ![MCP](https://img.shields.io/badge/MCP-Streamable%20HTTP-blue)
 ![Transport](https://img.shields.io/badge/Transport-stdio%20%2B%20HTTP-green)
 [![M8ven Trust Index](https://m8ven.ai/badge/mcp/panstories/email-verifier-mcp)](https://m8ven.ai/mcp/panstories/email-verifier-mcp)
+[![M8ven Score](https://m8ven.ai/badge/mcp/panstories-email-verifier-mcp-10jylm?v=1bd37b0d072467cbadc972c79cd99409)](https://m8ven.ai/mcp/panstories-email-verifier-mcp-10jylm?s=readme)
 
 🌐 **[English](#english)** · **[简体中文](#简体中文)** · **[繁體中文](#繁體中文)**
 
