@@ -3,7 +3,7 @@
   "name": "email-verifier-mcp",
   "title": "Email Verifier MCP — DNS Email Verification",
   "description": "Remote MCP server for email verification. RFC 5321 syntax, MX lookup, 160k disposable-domain blacklist and role-account detection. DNS-only and compliant by default; SMTP handshake is opt-in. Zero third-party API fees.",
-  "version": "1.0.1",
+  "version": "1.0",
   "buildTag": "latest",
   "usesStandbyMode": true,
   "webServerMcpPath": "/mcp",
