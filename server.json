@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.PanStories/email-verifier-mcp",
+  "title": "Email Verifier MCP",
+  "description": "Verify email deliverability with RFC format, MX, SMTP and disposable-domain checks.",
+  "version": "1.0.0",
+  "websiteUrl": "https://apify.com/neeenja/email-verifier-mcp",
+  "repository": {
+    "url": "https://github.com/PanStories/Email-Verifier-MCP",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://neeenja--email-verifier-mcp.apify.actor/mcp"
+    }
+  ]
+}
