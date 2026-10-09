@@ -48,7 +48,7 @@ describe("checkEmail orchestration (no network)", () => {
   it("returns an array for mx even when offline", async () => {
     const mx = await resolveMx("gmail.com");
     expect(Array.isArray(mx)).toBe(true);
-  });
+  }, 15000); // resolveMx's own DNS timeout is 5s; allow headroom under slow resolvers
 
   it("scores a DNS-only pass without network for mx-less check", async () => {
     const r = await checkEmail("alice@example.com", {
