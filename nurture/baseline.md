@@ -53,3 +53,18 @@ but the npm package does not exist (404). This:
 2. Is a credibility hit — anyone who copies the headline install gets a 404.
 
 `npm publish` is blocked only by missing npm auth (`npm whoami` → ENEEDAUTH).
+## 2026-10-09 weekly refresh (auto-nurture)
+- Apify totalRuns: **17**（基线 13，Δ+4）；isPublic=true；taggedBuilds 含 latest ✅；lastRun 2026-10-09
+- 有机 tool-call 仍 ≈ 0；收入 ≈ $0（与基线一致，run 多为 standby 自检）
+- GitHub stars 0；issues/PR 近 7d = 0
+- M8ven: Emerging；**Claim 待老板点击**；README 斜杠 badge → tokenized 验证行已自治修复并 push (commit 01f458b)
+- 待办：npm publish 清 npx 404（需 npm token）。
+
+## 2026-10-17 monthly deep refresh (auto-nurture)
+- Apify totalRuns 仍为 **17**（与 10-09 一致，无新增有机 run）；lastRun 2026-10-09（standby 自检）；totalUsers=1、7d/30d users=**0**、reviews=**0**、publicActorChargedEventCounts=**None** → **仍零有机使用 / 零收入**。核心矛盾 = 发现度 + npx 断头路，非功能缺陷。
+- isPublic=true ✅；taggedBuilds=['latest'] ✅。
+- M8ven：**Verified Publisher · Grade B · 89/100**（scored 2026-10-15）。README tokenized 验证行 live ✅（无需修）；trust_audit **FAIL 0 / WARN 1 / PASS 16**（唯一 WARN = 缺可选 `.well-known/m8ven-publisher.txt`，非阻塞）。
+- 目录在架：Glama ✅ `PanStories/Email-Verifier-MCP`（4 工具 v1.0.0，被动收录）；Smithery ❌ 404；mcpservers.org ❌ 404；PulseMCP ❌ 404；mcp.so（中文）未收录。
+- 竞品盘货：GitHub 专属 email-verification MCP 多为 **API-key 付费 wrapper**（AbstractAPI / MailboxValidator / Byteplant / NoBounce / Truelist / UChecker，stars 普遍 <10）；商业托管竞品 Verifox / Verifly / BillionVerify / verify-email.app / emailverify.io / MailValid 多有免费档但需注册/key。中文市场 email-verification MCP 几乎全是付费 API wrapper → 我方「$0 / 无 key / DNS-only」楔子在中文市场相对独特。
+- 决策结论（详见 nurture 报告）：**发现度是头号杠杆**；Top-4 RICE = Smithery 上架 / npm publish（清 npx 404）/ mcpservers.org 提交 / mcp.so 提交；均受外部凭据或「首次对外发帖」约束 → 列待老板拍板。自治修复本轮无必需改动（M8ven badge 行已正确、README npx 已标 🚧 pending）。
+
