@@ -26,5 +26,10 @@
     },
     "required": []
   },
-  "dockerfile": "../Dockerfile"
+  "dockerfile": "../Dockerfile",
+  "defaultRunOptions": {
+    "maxTotalChargeUsd": 0.05,
+    "timeoutSecs": 300,
+    "memoryMbytes": 512
+  }
 }
