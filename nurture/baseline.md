@@ -68,3 +68,14 @@ but the npm package does not exist (404). This:
 - 竞品盘货：GitHub 专属 email-verification MCP 多为 **API-key 付费 wrapper**（AbstractAPI / MailboxValidator / Byteplant / NoBounce / Truelist / UChecker，stars 普遍 <10）；商业托管竞品 Verifox / Verifly / BillionVerify / verify-email.app / emailverify.io / MailValid 多有免费档但需注册/key。中文市场 email-verification MCP 几乎全是付费 API wrapper → 我方「$0 / 无 key / DNS-only」楔子在中文市场相对独特。
 - 决策结论（详见 nurture 报告）：**发现度是头号杠杆**；Top-4 RICE = Smithery 上架 / npm publish（清 npx 404）/ mcpservers.org 提交 / mcp.so 提交；均受外部凭据或「首次对外发帖」约束 → 列待老板拍板。自治修复本轮无必需改动（M8ven badge 行已正确、README npx 已标 🚧 pending）。
 
+
+## 2026-10-21 B4 refresh (Apify API now available)
+
+> B4 was previously blocked: APIFY_TOKEN empty in automation sandbox. The token now
+> resolves via `~/.apify/auth.json` (Apify `/users/me` → HTTP 200), so KPIs re-verified.
+
+- **Actor:** `LhK9VskPkgkSWCPDy` · **Apify totalRuns (live):** **17** (re-verified via `GET /v2/acts/LhK9VskPkgkSWCPDy`)
+- **Pricing (live pricingInfos):** PAY_PER_EVENT · tool-call $0.005 (DNS-only, zero upstream cost).
+- **M8ven:** README badge tokenized (panstories-email-verifier-mcp-10jylm?variant=verified&v=...) ✅ verified.
+- GA4 / npm / mcpservers.org / Smithery remain boss-gated (B3/B5/B6) — see fix-attempt report.
+
