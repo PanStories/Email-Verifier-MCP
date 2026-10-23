@@ -79,3 +79,10 @@ but the npm package does not exist (404). This:
 - **M8ven:** README badge tokenized (panstories-email-verifier-mcp-10jylm?variant=verified&v=...) ✅ verified.
 - GA4 / npm / mcpservers.org / Smithery remain boss-gated (B3/B5/B6) — see fix-attempt report.
 
+
+## 2026-10-23 (Fri) weekly-light refresh
+- **KPI (Apify totalRuns, live):** **17** (Δ 0 vs 2026-10-21). Flat.
+- **GitHub:** 0 stars / 0 open issues / 0 open PRs (public). Flat.
+- **M8ven:** README badge tokenized (panstories-email-verifier-mcp-10jylm?variant=verified&v=...) ✅ verified via live raw README curl.
+- **Pricing:** no change (tool-call $0.005). Iron Law #4 honored.
+- GA4 (B5) / npm-publish (B3, npx still 404) / dirs (B6) remain boss-gated. B2 (Ethics token) now RESOLVED.
