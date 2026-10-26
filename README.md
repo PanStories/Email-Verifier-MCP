@@ -132,7 +132,7 @@ The SMTP handshake is **opt-in** (`smtp: true`) and should only be enabled from 
 | Any tool call | **$0.005** on the hosted Apify endpoint |
 | Self-hosted (clone) | Free and unlimited — the source is MIT |
 
-The hosted endpoint is pay-per-event: no subscription, no minimum. Running it locally with `npx` costs nothing.
+The hosted endpoint is pay-per-event: no subscription, no minimum. Running it locally (clone + `npm start`) costs nothing.
 
 ## Development
 
@@ -264,7 +264,7 @@ SMTP 握手是**可选开启**的（`smtp: true`），只应在你能掌控的�
 | 任意工具调用 | 托管 Apify 端点 **$0.005** |
 | 克隆自托管 | 免费且无限次 —— 源码为 MIT 许可 |
 
-托管端点按次计费：无订阅、无最低消费。本地用 `npx` 运行不产生任何费用。
+托管端点按次计费：无订阅、无最低消费。本地克隆运行（`npm start`）不产生任何费用。
 
 ## 本地开发
 
@@ -392,7 +392,7 @@ SMTP 握手是**可選開啟**的（`smtp: true`），只應在你能掌控的�
 | 任何工具呼叫 | 託管 Apify 端點 **$0.005** |
 | 克隆自託管 | 免費且無限量 —— 原始碼採 MIT 授權 |
 
-託管端點按次計費：無訂閱、無最低消費。本機以 `npx` 執行不會產生任何費用。
+託管端點按次計費：無訂閱、無最低消費。本機克隆執行（`npm start`）不會產生任何費用。
 
 ## 本機開發
 
