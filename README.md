@@ -16,7 +16,7 @@
 | Apify Store | https://apify.com/neeenja/email-verifier-mcp |
 | Source code | https://github.com/PanStories/Email-Verifier-MCP |
 | Self-host (clone) | `git clone https://github.com/PanStories/Email-Verifier-MCP && cd Email-Verifier-MCP && npm i && npm start` |
-| npm package | 🚧 publish in progress — not yet on npm; use the hosted endpoint or clone above for now |
+| npm package | Not published to npm — use the hosted endpoint or clone above |
 | Featured on | [Sartbot Featured](https://sartbot.com/) |
 
 ---
@@ -86,20 +86,21 @@ The score is additive and fully explainable — no black box.
 
 ## Connect
 
-**Option A — self-host via `npx` (free, unlimited).** Runs as a stdio subprocess inside your own agent:
+**Option A — self-host via local clone (free, unlimited).** Runs as a stdio subprocess inside your own agent:
 
 ```json
 {
   "mcpServers": {
     "email-verifier-mcp": {
-      "command": "npx",
-      "args": ["-y", "email-verifier-mcp"]
+      "command": "npm",
+      "args": ["start"],
+      "cwd": "/absolute/path/to/Email-Verifier-MCP"
     }
   }
 }
 ```
 
-> 🚧 The `npx` package is being published to npm. Until it lands, clone the repo (see the table above) or use the hosted endpoint (Option B).
+> The `email-verifier-mcp` package is **not published to npm**, so `npx email-verifier-mcp` will not resolve. Clone the repo (see the table above), run `npm i && npm start`, and point your client at it — or use the hosted endpoint (Option B).
 
 **Option B — hosted endpoint on Apify.** Use it from anywhere, including agents that cannot spawn subprocesses:
 
@@ -129,7 +130,7 @@ The SMTP handshake is **opt-in** (`smtp: true`) and should only be enabled from 
 |---|---|
 | `initialize` / `tools/list` | Free — agents can always connect and discover |
 | Any tool call | **$0.005** on the hosted Apify endpoint |
-| Self-hosted via `npx` | Free and unlimited — the source is MIT |
+| Self-hosted (clone) | Free and unlimited — the source is MIT |
 
 The hosted endpoint is pay-per-event: no subscription, no minimum. Running it locally with `npx` costs nothing.
 
@@ -217,20 +218,21 @@ Read-only and stateless. Submitted email addresses are processed in memory only 
 
 ## 连接方式
 
-**方式 A —— 本地 `npx` 自托管（免费、无限次）**。在你的 Agent 进程内以 stdio 子进程运行：
+**方式 A —— 本地克隆自托管（免费、无限次）**。在你的 Agent 进程内以 stdio 子进程运行：
 
 ```json
 {
   "mcpServers": {
     "email-verifier-mcp": {
-      "command": "npx",
-      "args": ["-y", "email-verifier-mcp"]
+      "command": "npm",
+      "args": ["start"],
+      "cwd": "/absolute/path/to/Email-Verifier-MCP"
     }
   }
 }
 ```
 
-> 🚧 `npx` 包正在发布到 npm。在发布完成前，请克隆仓库（见上方表格）或使用托管端点（方式 B）。
+> `email-verifier-mcp` 暂未发布到 npm，因此 `npx email-verifier-mcp` 无法解析。请克隆仓库（见上方表格），运行 `npm i && npm start`，再将你的客户端指向它 —— 或使用托管端点（方式 B）。
 
 **方式 B —— Apify 托管端点**。任何地方都能调用，包括无法启动子进程的 Agent：
 
@@ -260,7 +262,7 @@ SMTP 握手是**可选开启**的（`smtp: true`），只应在你能掌控的�
 |---|---|
 | `initialize` / `tools/list` | 免费 —— Agent 永远能连上并发现工具 |
 | 任意工具调用 | 托管 Apify 端点 **$0.005** |
-| `npx` 自托管 | 免费且无限次 —— 源码为 MIT 许可 |
+| 克隆自托管 | 免费且无限次 —— 源码为 MIT 许可 |
 
 托管端点按次计费：无订阅、无最低消费。本地用 `npx` 运行不产生任何费用。
 
@@ -344,20 +346,21 @@ MIT。一次性域名列表来自 [`disposable-email-domain`](https://www.npmjs.
 
 ## 連線方式
 
-**方式 A —— 本機 `npx` 自託管（免費、無限量）**。在你的 Agent 行程內以 stdio 子行程執行：
+**方式 A —— 本機克隆自託管（免費、無限量）**。在你的 Agent 行程內以 stdio 子行程執行：
 
 ```json
 {
   "mcpServers": {
     "email-verifier-mcp": {
-      "command": "npx",
-      "args": ["-y", "email-verifier-mcp"]
+      "command": "npm",
+      "args": ["start"],
+      "cwd": "/absolute/path/to/Email-Verifier-MCP"
     }
   }
 }
 ```
 
-> 🚧 `npx` 套件正在發佈到 npm。發佈完成前，請克隆倉庫（見上方表格）或使用託管端點（方式 B）。
+> `email-verifier-mcp` 尚未發佈到 npm，因此 `npx email-verifier-mcp` 無法解析。請克隆倉庫（見上方表格），執行 `npm i && npm start`，再將你的用戶端指向它 —— 或使用託管端點（方式 B）。
 
 **方式 B —— Apify 託管端點**。任何地方都能呼叫，包含無法啟動子行程的 Agent：
 
@@ -387,7 +390,7 @@ SMTP 握手是**可選開啟**的（`smtp: true`），只應在你能掌控的�
 |---|---|
 | `initialize` / `tools/list` | 免費 —— Agent 永遠能連上並探索工具 |
 | 任何工具呼叫 | 託管 Apify 端點 **$0.005** |
-| `npx` 自託管 | 免費且無限量 —— 原始碼採 MIT 授權 |
+| 克隆自託管 | 免費且無限量 —— 原始碼採 MIT 授權 |
 
 託管端點按次計費：無訂閱、無最低消費。本機以 `npx` 執行不會產生任何費用。
 
